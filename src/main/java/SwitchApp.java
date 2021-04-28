@@ -35,7 +35,7 @@ public class SwitchApp {
     private static void printOperationResultPrompt(double[] operationData, double result) {
         AllowedOperation operation = AllowedOperation.values()[(int) operationData[2] - 1];
         System.out.println(operationData[0] + " " +
-                operation.getOperationSign() + " " +
+                operation.getOperationPrintSign() + " " +
                 operationData[1] + " = " + result);
     }
 
@@ -110,12 +110,12 @@ public class SwitchApp {
         DIVISION("Деление", ":", 4);
 
         private final String ruOperationName;
-        private final String operationSign;
+        private final String operationPrintSign;
         private final int operationCode;
 
         AllowedOperation(String operationName, String operationSign, int operationCode) {
             this.ruOperationName = operationName;
-            this.operationSign = operationSign;
+            this.operationPrintSign = operationSign;
             this.operationCode = operationCode;
         }
 
@@ -123,8 +123,8 @@ public class SwitchApp {
             return ruOperationName;
         }
 
-        public String getOperationSign() {
-            return operationSign;
+        public String getOperationPrintSign() {
+            return operationPrintSign;
         }
 
         public int getOperationCode() {
